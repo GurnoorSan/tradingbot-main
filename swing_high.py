@@ -66,16 +66,18 @@ class SwingHigh(Strategy):
         self.vars.order_number = 0
 
 
-
-
-
-if __name__ == "__main__":
-        start = datetime(2024,10,17)
-        end = datetime(2024,11,24)
+def execute_swinghigh(broker, backtest, symbol, quantity, frequency, cash_at_risk, start_date, end_date):
+    strategy = SwingHigh(name='swing_high', broker=broker, 
+                    parameters={"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk})
+    if backtest:
         SwingHigh.backtest(
             PolygonDataBacktesting,
-            start,
-            end,
-            benchmark_asset = "SPY"
+            backtesting_start=start_date,
+            backtesting_end=end_date,
+            benchmark_asset = symbol,
+            polygon_api_key=os.getenv("POLYGON_API_KEY")
         )
-
+    else:
+        trader = Trader(strategy)
+        trader.run()               
+    
