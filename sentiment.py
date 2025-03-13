@@ -94,4 +94,5 @@ def excecute_sentiment(broker, symbol, quantity, frequency, cash_at_risk, backte
         )
                                     
     else:
-        Trader(strategy).run()
+        trader = Trader(strategy)
+        trader.run()   

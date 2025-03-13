@@ -66,7 +66,7 @@ class SwingHigh(Strategy):
         self.vars.order_number = 0
 
 
-def execute_swinghigh(broker, backtest, symbol, quantity, frequency, cash_at_risk, start_date, end_date):
+def execute_swinghigh(broker, symbol, quantity, frequency, cash_at_risk, backtest, start_date, end_date):
     strategy = SwingHigh(name='swing_high', broker=broker, 
                     parameters={"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk})
     if backtest:
