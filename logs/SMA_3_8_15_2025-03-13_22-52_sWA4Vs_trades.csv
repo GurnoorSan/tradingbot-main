@@ -1,0 +1,11 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2023-02-06 09:30:00-05:00,SMA_3_8_15,5be92375fffa476a916c88bac6e20c39,GLD,sell,market,new,1,gtc,0.0,1,stock,,,
+2023-02-06 09:30:00-05:00,SMA_3_8_15,5be92375fffa476a916c88bac6e20c39,GLD,sell,market,fill,1,gtc,0.0,1,stock,174.11000061035156,287.0,0.0
+2023-05-04 09:30:00-04:00,SMA_3_8_15,8514c2bacde64363bbb88be964923297,GLD,buy,market,new,1,day,0.0,1,stock,,,
+2023-05-04 09:30:00-04:00,SMA_3_8_15,280ca93e13cc4bbe9c7c9847667d57cc,GLD,buy,market,new,1,gtc,0.0,1,stock,,,
+2023-05-04 09:30:00-04:00,SMA_3_8_15,8514c2bacde64363bbb88be964923297,GLD,buy,market,fill,1,day,0.0,1,stock,188.86000061035156,287.0,0.0
+2023-05-04 09:30:00-04:00,SMA_3_8_15,280ca93e13cc4bbe9c7c9847667d57cc,GLD,buy,market,fill,1,gtc,0.0,1,stock,188.86000061035156,397.0,0.0
+2024-10-09 09:30:00-04:00,SMA_3_8_15,8c450202898e472cbe8c90b030a945ab,GLD,sell,market,new,1,day,0.0,1,stock,,,
+2024-10-09 09:30:00-04:00,SMA_3_8_15,4a80c71f848e475cbc8c20cb7a2ddd24,GLD,sell,market,new,1,gtc,0.0,1,stock,,,
+2024-10-09 09:30:00-04:00,SMA_3_8_15,8c450202898e472cbe8c90b030a945ab,GLD,sell,market,fill,1,day,0.0,1,stock,241.16000366210938,397.0,0.0
+2024-10-09 09:30:00-04:00,SMA_3_8_15,4a80c71f848e475cbc8c20cb7a2ddd24,GLD,sell,market,fill,1,gtc,0.0,1,stock,241.16000366210938,43.0,0.0

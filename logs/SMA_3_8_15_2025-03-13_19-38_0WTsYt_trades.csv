@@ -1,0 +1,7 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2023-08-07 09:30:00-04:00,SMA_3_8_15,796b5b177437450295896656b9919612,SPY,sell,market,new,1,gtc,0.0,1,stock,,,
+2023-08-07 09:30:00-04:00,SMA_3_8_15,796b5b177437450295896656b9919612,SPY,sell,market,fill,1,gtc,0.0,1,stock,448.7099914550781,111.0,0.0
+2024-04-08 09:30:00-04:00,SMA_3_8_15,c0c2138d323f4a0b98d031b9c45bd3f1,SPY,buy,market,new,1,day,0.0,1,stock,,,
+2024-04-08 09:30:00-04:00,SMA_3_8_15,b0a7ad7ccb2c493d99148ee46095c64e,SPY,sell,market,new,1,gtc,0.0,1,stock,,,
+2024-04-08 09:30:00-04:00,SMA_3_8_15,c0c2138d323f4a0b98d031b9c45bd3f1,SPY,buy,market,fill,1,day,0.0,1,stock,519.1500244140625,111.0,0.0
+2024-04-08 09:30:00-04:00,SMA_3_8_15,b0a7ad7ccb2c493d99148ee46095c64e,SPY,sell,market,fill,1,gtc,0.0,1,stock,519.1500244140625,143.0,0.0

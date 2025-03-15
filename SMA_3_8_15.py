@@ -16,8 +16,7 @@ BASE_URL = "https://paper-api.alpaca.markets/v2"
 
 
 class SMA_3_8_15(Strategy):
-
-    def initialize(self, symbol:str="GLD", quantity:int = 0, frequency:str = "24H", cash_at_risk:float=.5, start:str="2023-01-01"): 
+    def initialize(self, symbol:str = "NONE", quantity:int = 0, frequency:str = "24H", cash_at_risk:float = 0.5, start:str = "2023-01-01"): 
         self.symbol = symbol
         self.sleeptime = frequency 
         self.last_trade = None 
@@ -80,7 +79,7 @@ def excecute_SMA_3_8_15(broker, symbol, quantity, frequency, cash_at_risk, backt
             YahooDataBacktesting, 
             start_date, 
             end_date, 
-            benchmark_asset= symbol
+            parameters={"symbol":symbol}
         )
                                     
     else:

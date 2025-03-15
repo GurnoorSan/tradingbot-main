@@ -1,0 +1,3 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2024-11-12 09:30:00-05:00,SMA_3_8_15,596219a9378d467d9f5166ee0854291e,SPY,buy,market,new,1,gtc,0.0,1,stock,,,
+2024-11-12 09:30:00-05:00,SMA_3_8_15,596219a9378d467d9f5166ee0854291e,SPY,buy,market,fill,1,gtc,0.0,1,stock,598.6799926757812,83.0,0.0

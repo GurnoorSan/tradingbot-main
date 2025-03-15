@@ -19,7 +19,7 @@ ALPACA_CREDS = {
 }
 
 class Sentiment(Strategy):
-    def initialize(self, symbol:str="SPY", quantity:int = 0, frequency:str = "24H", cash_at_risk:float=.5): 
+    def initialize(self, symbol:str="None", quantity:int = 0, frequency:str = "24H", cash_at_risk:float=.5): 
         self.symbol = symbol
         self.sleeptime = frequency 
         self.last_trade = None 
