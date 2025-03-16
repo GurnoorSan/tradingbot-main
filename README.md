@@ -7,7 +7,6 @@ This trading bot uses news sentiment to look for the right entry and exit.
 3. Install initial deps `pip install lumibot timedelta alpaca-trade-api==3.1.1`
 4. Install transformers and friends `pip install torch torchvision torchaudio transformers` 
 5. Update the `API_KEY` and `API_SECRET` with values from your Alpaca account 
-6. Run the bot `python tradingbot.py`
 
 <p>N.B. Torch installation instructions will vary depending on your operating system and hardware. See here for more: 
 <a href="pytorch.org/">PyTorch Installation Instructions</a></p>
