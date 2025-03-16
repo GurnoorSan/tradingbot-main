@@ -15,7 +15,7 @@ BASE_URL = "https://paper-api.alpaca.markets/v2"
 
 
 
-class SMA_3_8_15(Strategy):
+class SMA_5_10_20(Strategy):
     def initialize(self, symbol:str = "NONE", quantity:int = 0, frequency:str = "24H", cash_at_risk:float = 0.5, start:str = "2023-01-01"): 
         self.symbol = symbol
         self.sleeptime = frequency 
@@ -31,20 +31,20 @@ class SMA_3_8_15(Strategy):
         bars = self.get_historical_prices(symbol, 22, "day")
         gld = bars.df
         gld['SMA_5'] = gld['close'].rolling(5).mean() # We calculate the 5 day moving average
-        gld['SMA_8'] = gld['close'].rolling(8).mean() # We calculate the 8 day moving average
-        gld['SMA_13'] = gld['close'].rolling(13).mean() # We calculate the 13 day moving average
+        gld['SMA_10'] = gld['close'].rolling(10).mean() # We calculate the 8 day moving average
+        gld['SMA_20'] = gld['close'].rolling(20).mean() # We calculate the 13 day moving average
         
         #generate buy signal
         gld['Signal'] = np.where(
-                                (gld['SMA_5'] > gld['SMA_13']) & (gld['SMA_8'] > gld['SMA_13']) & 
-                                (gld['SMA_5'].shift(1) < gld['SMA_13'].shift(1)) & (gld['SMA_8'].shift(1) < gld['SMA_13'].shift(1)), 
+                                (gld['SMA_5'] > gld['SMA_20']) & (gld['SMA_10'] > gld['SMA_20']) & 
+                                (gld['SMA_5'].shift(1) < gld['SMA_20'].shift(1)) & (gld['SMA_10'].shift(1) < gld['SMA_20'].shift(1)), 
                                 "BUY",  # If these conditions are met we send a buy signal 
                                 None    # Otherwise we send no signal
                                 )
 
         gld['Signal'] = np.where(
-                                (gld['SMA_5'] < gld['SMA_13']) & (gld['SMA_8'] < gld['SMA_13']) & 
-                                (gld['SMA_5'].shift(1) > gld['SMA_13'].shift(1)) & (gld['SMA_8'].shift(1) > gld['SMA_13'].shift(1)), 
+                                (gld['SMA_5'] < gld['SMA_20']) & (gld['SMA_10'] < gld['SMA_20']) & 
+                                (gld['SMA_5'].shift(1) > gld['SMA_20'].shift(1)) & (gld['SMA_10'].shift(1) > gld['SMA_20'].shift(1)), 
                                 "SELL", # If conditions are met we send a sell signal
                                 gld['Signal'] # Otherwise we keep the previous signal
                             )
@@ -71,16 +71,17 @@ class SMA_3_8_15(Strategy):
             self.submit_order(order)
         
 
-def excecute_SMA_3_8_15(broker, symbol, quantity, frequency, cash_at_risk, backtest, start_date, end_date):
-    strategy = SMA_3_8_15(name='sma_3_8_15', broker=broker, 
+def excecute_SMA_5_10_20(broker, symbol, quantity, frequency, cash_at_risk, backtest, start_date, end_date):
+    strategy = SMA_5_10_20(name='sma_3_8_15', broker=broker, 
                     parameters={"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk, "start":start_date})
     if backtest:
         strategy.backtest(
             YahooDataBacktesting, 
             start_date, 
-            end_date, 
-            parameters={"symbol":symbol}
-        )
+            end_date,
+             benchmark_asset=symbol,
+            parameters= {"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk, "start":start_date},
+            )
                                     
     else:
         trader = Trader(strategy)

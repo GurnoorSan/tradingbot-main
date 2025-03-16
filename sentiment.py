@@ -90,7 +90,8 @@ def excecute_sentiment(broker, symbol, quantity, frequency, cash_at_risk, backte
             YahooDataBacktesting, 
             start_date, 
             end_date, 
-            parameters={"symbol":symbol}
+            benchmark_asset=symbol,
+            parameters= {"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk}
         )
                                     
     else:

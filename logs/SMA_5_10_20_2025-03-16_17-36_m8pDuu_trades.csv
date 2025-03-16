@@ -1,0 +1,3 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2023-03-14 09:30:00-04:00,SMA_5_10_20,6552dd2ba2e6433487dbfca0d0903702,GLD,buy,market,new,1,gtc,0.0,1,stock,,,
+2023-03-14 09:30:00-04:00,SMA_5_10_20,6552dd2ba2e6433487dbfca0d0903702,GLD,buy,market,fill,1,gtc,0.0,1,stock,177.35000610351562,281.0,0.0

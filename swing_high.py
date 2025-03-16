@@ -75,7 +75,8 @@ def execute_swinghigh(broker, symbol, quantity, frequency, cash_at_risk, backtes
             backtesting_start=start_date,
             backtesting_end=end_date,
             benchmark_asset = symbol,
-            polygon_api_key=os.getenv("POLYGON_API_KEY")
+            polygon_api_key=os.getenv("POLYGON_API_KEY"),
+            parameters= {"symbol":symbol, "quantity": quantity, "frequency": frequency, "cash_at_risk": cash_at_risk}
         )
     else:
         trader = Trader(strategy)
