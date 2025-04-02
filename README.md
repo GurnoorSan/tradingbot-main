@@ -1,5 +1,10 @@
 # TraderBot
-This trading bot uses news sentiment to look for the right entry and exit. 
+This trading bot implements different trading strategies such as:
+
+News trading
+SMA 5, 10, 20
+Bullspread
+Swing High
 
 # Startup 🚀
 1. Create a virtual environment `conda create -n trader python=3.10` 
